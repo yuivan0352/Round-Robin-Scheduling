@@ -6,7 +6,7 @@ public class ProcessCreator {
     private Scanner reader;
     private ArrayList<Process> processes= new ArrayList<Process>();
 
-    public ProcessHandler(String fileName) throws FileNotFoundException{
+    public ProcessCreator(String fileName) throws FileNotFoundException{
         try {
             String[] tmp = new String[3];
             processFile = new File(".\\" + fileName);
