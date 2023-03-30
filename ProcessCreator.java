@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class ProcessHandler {
+public class ProcessCreator {
     private File processFile;
     private Scanner reader;
     private ArrayList<Process> processes= new ArrayList<Process>();
