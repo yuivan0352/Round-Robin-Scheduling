@@ -4,7 +4,7 @@ import java.io.*;
 public class ProcessCreator {
     private File processFile;
     private Scanner reader;
-    private ArrayList<Process> processes= new ArrayList<Process>();
+    private HashMap<Integer, ArrayList<Process>> processes = new HashMap<Integer, ArrayList<Process>>();
 
     public ProcessCreator(String fileName) throws FileNotFoundException{
         try {
@@ -12,10 +12,19 @@ public class ProcessCreator {
             processFile = new File(".\\" + fileName);
             reader = new Scanner(processFile);
             reader.nextLine();
+            int pid, arrival, burst;
 
             while (reader.hasNextLine()) {
                 tmp = reader.nextLine().split(",");
-                processes.add(new Process(Integer.parseInt(tmp[0]), Integer.parseInt(tmp[1]), Integer.parseInt(tmp[2])));
+                pid = Integer.parseInt(tmp[0]);
+                arrival = Integer.parseInt(tmp[1]);
+                burst = Integer.parseInt(tmp[2]);
+
+                if (!processes.containsKey(arrival)) {
+                    processes.put(arrival, new ArrayList<Process>());
+                }
+
+                processes.get(arrival).add(new Process(pid, arrival, burst));
             }
 
             reader.close();
@@ -23,5 +32,14 @@ public class ProcessCreator {
             System.out.println("File was not found");
             System.exit(0);
         }
+    }
+
+    public LinkedList<Process> queueProcesses() {
+        LinkedList<Process> tmp = new LinkedList<Process>();
+        for (Integer key : processes.keySet()) {
+            tmp.addAll(processes.get(key));
+        }
+
+        return tmp;
     }
 }
