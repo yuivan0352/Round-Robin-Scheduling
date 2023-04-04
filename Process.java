@@ -1,5 +1,3 @@
-import java.io.FileReader;
-
 public class Process {
     private int pid, arrival, burst, remBurst, completion, turnaround, waiting, response;
     
