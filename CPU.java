@@ -3,6 +3,7 @@ import java.util.*;
 
 public class CPU {
     private static LinkedList<Process> queue = new LinkedList<Process>();
+    private static ArrayList<Process> finProcess = new ArrayList<Process>();
     private static int clock = 0;
     private static int quantum, conSwitch;
 
@@ -30,15 +31,18 @@ public class CPU {
                 queue.peek().calcTurnaround();
                 queue.peek().calcWaiting();
                 queue.peek().calcResponse(clock);
-                System.out.println(queue.peek());
-                queue.pop();
+                finProcess.add(queue.pop());
             } else if (queue.peek().getRemBurst() != 0) {
                 queue.offer(queue.pop());
             }
             conSwitch++;
         }
 
-        System.out.println(clock);
-        System.out.println(conSwitch);
+        for (int i = 0; i < finProcess.size(); i++) {
+            System.out.println(finProcess.get(i));
+        }
+
+        System.out.println("Clock: " + clock);
+        System.out.println("# of Context Switches: " + conSwitch);
     }
 }
