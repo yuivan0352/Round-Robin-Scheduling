@@ -38,11 +38,13 @@ public class CPU {
             conSwitch++;
         }
 
+        System.out.println("");
+
         for (int i = 0; i < finProcess.size(); i++) {
             System.out.println(finProcess.get(i));
         }
 
         System.out.println("Clock: " + clock);
-        System.out.println("# of Context Switches: " + conSwitch);
+        System.out.println("# of Context Switches: " + conSwitch + "\n");
     }
 }
