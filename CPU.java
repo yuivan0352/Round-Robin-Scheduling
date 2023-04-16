@@ -4,8 +4,9 @@ import java.util.*;
 public class CPU {
     private static LinkedList<Process> queue = new LinkedList<Process>();
     private static ArrayList<Process> finProcess = new ArrayList<Process>();
-    private static int clock = 0;
-    private static int quantum, conSwitch;
+    private static int clock, quantum, conSwitch, avgWait, avgTurnaround, idleTime;
+    private static final int conSwitchTime = 2;
+    private static double cpuUtil = 1.0;
 
     public static void main(String args[]) throws FileNotFoundException{
         try {
@@ -36,15 +37,28 @@ public class CPU {
                 queue.offer(queue.pop());
             }
             conSwitch++;
+            idleTime += conSwitchTime;
+            clock += conSwitchTime;
         }
 
         System.out.println("");
 
         for (int i = 0; i < finProcess.size(); i++) {
+            avgWait += finProcess.get(i).getWaiting();
+            avgTurnaround += finProcess.get(i).getTurnaround();
+            avgWait /= finProcess.size();
+            avgTurnaround /= finProcess.size();
             System.out.println(finProcess.get(i));
         }
 
+        cpuUtil -= (double)idleTime / (double)clock;
+        cpuUtil = Math.round(cpuUtil * 100.0);
+
         System.out.println("Clock: " + clock);
-        System.out.println("# of Context Switches: " + conSwitch + "\n");
+        System.out.println("# of Context Switches: " + conSwitch);
+        System.out.println("Average Waiting Time: " + avgWait);
+        System.out.println("Average Turnaround Time: " + avgTurnaround);
+        System.out.println("Idle Time: " + idleTime);
+        System.out.println("CPU Utilization: " + cpuUtil + "%\n");
     }
 }
