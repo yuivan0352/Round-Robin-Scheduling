@@ -9,7 +9,7 @@ public class ProcessCreator {
     public ProcessCreator(String fileName) throws FileNotFoundException{
         try {
             String[] tmp = new String[3];
-            processFile = new File(".\\" + fileName);
+            processFile = new File("./" + fileName);
             reader = new Scanner(processFile);
             reader.nextLine();
             int pid, arrival, burst;
