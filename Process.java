@@ -1,3 +1,5 @@
+// Process object class that holds all process information
+
 public class Process {
     private int pid, arrival, burst, remBurst, completion, turnaround, waiting, response;
     
@@ -44,14 +46,13 @@ public class Process {
 
     public String toString() {
         String tmp = "";
-        tmp += "Process Info:\n";
         tmp += "Process ID: " + pid + "\n";
         tmp += "Arrival Time: " + arrival + "\n";
-        tmp += "Burst Time: " + burst + "\n";
-        tmp += "Completion Time: " + completion + "\n";
-        tmp += "Turnaround Time: " + turnaround + "\n";
-        tmp += "Waiting Time: " + waiting + "\n";
-        tmp += "Response Time: " + response + "\n";
+        tmp += "Burst Time: " + burst + "ms\n";
+        tmp += "Completion Time: " + completion + "ms\n";
+        tmp += "Turnaround Time: " + turnaround + "ms\n";
+        tmp += "Waiting Time: " + waiting + "ms\n";
+        tmp += "Response Time: " + response + "ms\n";
         return tmp;
     }
 }
