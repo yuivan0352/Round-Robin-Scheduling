@@ -1,3 +1,10 @@
+/***************************************
+ * CSCI 330 M03 Spring 2023
+ * Ivan Yu, Jerry Weng
+ * CPU Scheduling Programming Project
+ * 4/23/2023
+****************************************/
+
 // Creates Processes based on file input and sorts them based on arrival time
 
 import java.util.*;

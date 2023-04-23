@@ -1,3 +1,10 @@
+/***************************************
+ * CSCI 330 M03 Spring 2023
+ * Ivan Yu, Jerry Weng
+ * CPU Scheduling Programming Project
+ * 4/23/2023
+****************************************/
+
 // Performs all process execution and tracks the time of process execution
 
 import java.io.FileNotFoundException;

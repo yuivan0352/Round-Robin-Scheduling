@@ -1,3 +1,10 @@
+/***************************************
+ * CSCI 330 M03 Spring 2023
+ * Ivan Yu, Jerry Weng
+ * CPU Scheduling Programming Project
+ * 4/23/2023
+****************************************/
+
 // Process object class that holds all process information
 
 public class Process {
