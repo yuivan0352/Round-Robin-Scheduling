@@ -12,12 +12,39 @@ Our program is the simulation of this such algorithm, where you can input a list
 
 * In command line run "java CPU.java (filename) (burst time)"
   * Default file name is processes.csv you can modify our file or drop another .csv file into the folder
-* Example of Execution:
-<img src="./images/Execution1-2.png" alt="execution1-2" width=60% height=60%>
-<img src="./images/Execution3-4.png" alt="execution3-4" width=60% height=60%>
+  
+### Examples of Execution (Our default processes.csv file)
+
+#### Burst time of 4
+
+* Execution
+<img src="./images/burstTime4/4Execution1-2.png" alt="4execution1-2" width=60% height=60%>
+<img src="./images/burstTime4/4Execution3-4.png" alt="4execution3-4" width=60% height=60%>
 
 * Process Info (When a process finishes execution)
-<img src="./images/ProcessInfo.png" alt="processInfo" width=50% height=50%>
+<img src="./images/burstTime4/4ProcessInfo.png" alt="4processInfo" width=60% height=60%>
 
 * General Info
-<img src="./images/GeneralInfo.png" alt="generalInfo" width=50% height=50%>
+<img src="./images/burstTime4/4GeneralInfo.png" alt="4generalInfo" width=60% height=60%>
+
+### Burst time of 8
+
+* Execution
+<img src="./images/burstTime8/8Execution1-2.png" alt="8execution1-2" width=60% height=60%>
+
+* Process Info (When a process finishes execution)
+<img src="./images/burstTime8/8ProcessInfo.png" alt="8processInfo" width=60% height=60%>
+
+* General Info
+<img src="./images/burstTime8/8GeneralInfo.png" alt="8generalInfo" width=60% height=60%>
+
+### Burst time of 12
+
+* Execution
+<img src="./images/burstTime12/12Execution1-2.png" alt="12execution1" width=60% height=60%>
+
+* Process Info (When a process finishes execution)
+<img src="./images/burstTime12/12ProcessInfo.png" alt="12processInfo" width=60% height=60%>
+
+* General Info
+<img src="./images/burstTime12/12GeneralInfo.png" alt="12generalInfo" width=60% height=60%>
